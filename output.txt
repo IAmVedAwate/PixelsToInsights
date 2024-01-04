@@ -1,0 +1,20 @@
+= downloaded_videa.mp4
+Run Terminal Help << => A Mini_Project
+  # Filter and select the largest contour (mass text area)
+ threshold area = 250 # Adjust this threshold based on your specific requirements
+  filtered_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > threshold_area]
+  largest_contour = None
+ for contour in filtered contours:
+ X, ¥, W, h = cv2.boundingRect(contour)
+ # Calculate the aspect ratio (width / height)
+ aspect_ratio = float(w) / h
+ print(aspect_ratio)
+ # Consider only those regions with an aspect ratio close to 1 (large square)
+ if 0 <= aspect_ratio <= 1.3:
+ largest_contour = contour
+ break
+ if largest_contour is not None:
+ X, ¥, W, h = cv2.boundingRect(largest_contour)
+ text_area = image[y:y+h, x:x+w]
+ cv2.imwrite("temp/cropped. jpg", text_area)
+ text = pytesseract.image_to_string(text_area)

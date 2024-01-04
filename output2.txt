@@ -1,0 +1,17 @@
+
+contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN APPROX SIMPLE)
+largest_area = 0
+largest_contour = None
+min_text_area = 10000
+for contour in contours:
+area = cv2.contourArea(contour)
+if area > min_text_area:
+if area > largest_area:
+largest_area = area
+largest_contour = contour
+if 2 is None:
+print("Hello World")
+if largest_contour is not None:
+X, ¥, W, h = cv2.boundingRect(largest_contour)
+a1 cropped_code_area = image[y:y + h, x:x + w]
+

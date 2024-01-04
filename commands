@@ -1,0 +1,1 @@
+tesseract.exe image.jpg text.txt -l fontname
